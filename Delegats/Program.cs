@@ -1,2 +1,52 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿//Задание: Работа с делегатами в C#
+
+//Создайте класс MathOperations, в котором определены
+//методы для выполнения математических операций, таких как
+//сложение, вычитание, умножение и деление.
+
+//Определите делегаты для каждой из этих операций.
+//Например, для сложения создайте делегат
+//delegate int AdditionDelegate(int a, int b);.
+
+//Создайте класс Calculator, который будет содержать методы для вызова
+//каждой математической операции.
+//Эти методы должны принимать делегаты в качестве параметров и вызывать их,
+//передавая соответствующие аргументы.
+
+//В методе Main программы создайте экземпляр класса
+//MathOperations, экземпляр класса Calculator и выполните несколько
+//математических операций, передавая соответствующие делегаты и выводя
+//результаты на консоль.
+
+//Это задание также позволит вам познакомиться с основами работы
+//с делегатами в C#. Если у вас есть вопросы или нужна дополнительная помощь,
+//не стесняйтесь спрашивать!
+
+public class Methoperations
+{
+    public int TestPlus(int x, int y)
+    { 
+        return x + y;
+    }
+    public int TestMinus(int x, int y)
+    {
+        return x - y;
+    }
+    public int TestMultiply(int x, int y)
+    {
+        return x * y;
+    }
+    public int TestDivide(int x, int y)
+    {
+        return x / y;
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+
+
+    }
+}
