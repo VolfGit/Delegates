@@ -41,19 +41,24 @@ public class Methoperations
 {
     public int TestPlus(int x, int y)
     {
+        Console.WriteLine("Plus");
         return x + y;
     }
     public int TestMinus(int x, int y)
     {
+        Console.WriteLine("Minus");
         return x - y;
     }
     public int TestMultiply(int x, int y)
     {
+        Console.WriteLine("Multiply");
         return x * y;
     }
     public int TestDivide(int x, int y)
     {
+        Console.WriteLine("Divide");
         return x / y;
+       
     }
 
 
@@ -88,37 +93,34 @@ public class Calculator
 
     }
     
-    public void AddDelegate(SomeOperation op,)
-    {
-        someOperation += multiplyDelegate;
-        someOperation += divideDelegate;
-        someOperation(3, 4);
-    }
+   
 }
 public class Program
 {
     public static void Main(string[] args)
     {
         Methoperations methoperations = new Methoperations();
-        Console.WriteLine(methoperations.TestMultiply(5, 2));
-        Console.WriteLine(methoperations.TestMinus(5, 2));
-        Console.WriteLine(methoperations.TestDivide(5, 2));
-        Console.WriteLine(methoperations.TestPlus(5, 2));
+        //Console.WriteLine(methoperations.TestMultiply(5, 2));
+        //Console.WriteLine(methoperations.TestMinus(5, 2));
+        //Console.WriteLine(methoperations.TestDivide(5, 2));
+        //Console.WriteLine(methoperations.TestPlus(5, 2));
 
-        Calculator calculator = new Calculator();
-        AdditionDelegate additionDelegate = new AdditionDelegate(methoperations.TestPlus);
-        Console.WriteLine(calculator.TestPlus1(5, 2, additionDelegate));
-        DivideDelegate divideDelegate = new DivideDelegate(methoperations.TestDivide);
-        Console.WriteLine(calculator.TestDivide(5, 2, divideDelegate));
-        MultiplyDelegate multiply = new MultiplyDelegate(methoperations.TestMultiply);
-        Console.WriteLine(calculator.TestMultiply(10, 3, multiply));
-        MinusDelegate minusdelegate = new MinusDelegate(methoperations.TestMinus);
-        Console.WriteLine(calculator.TestMinus(10, 2, minusdelegate));
+        //Calculator calculator = new Calculator();
+        //AdditionDelegate additionDelegate = new AdditionDelegate(methoperations.TestPlus);
+        //Console.WriteLine(calculator.TestPlus1(5, 2, additionDelegate));
+        //DivideDelegate divideDelegate = new DivideDelegate(methoperations.TestDivide);
+        //Console.WriteLine(calculator.TestDivide(5, 2, divideDelegate));
+        //MultiplyDelegate multiply = new MultiplyDelegate(methoperations.TestMultiply);
+        //Console.WriteLine(calculator.TestMultiply(10, 3, multiply));
+        //MinusDelegate minusdelegate = new MinusDelegate(methoperations.TestMinus);
+        //Console.WriteLine(calculator.TestMinus(10, 2, minusdelegate));
 
         SomeOperation someOperation = new SomeOperation(methoperations.TestMultiply);
-        Calculator.AddDelegate(someOperation);
+        someOperation += methoperations.TestMinus;
+        Console.WriteLine(someOperation.Invoke(5,2));
+        Console.WriteLine(someOperation(1, 2));
+        someOperation(1,2);
 
-        
-       
+
     }
 }
