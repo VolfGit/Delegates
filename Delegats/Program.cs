@@ -120,7 +120,7 @@ public class Program
         Console.WriteLine(someOperation.Invoke(5,2));
         Console.WriteLine(someOperation(1, 2));
         someOperation(1,2);
-        //
+        
         //
 
     }
